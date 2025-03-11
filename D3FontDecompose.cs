@@ -117,8 +117,8 @@ namespace BFGFontTool
                 textures[textureName] = newImage;
             }
 
-            MagickImage image = textures[textureName].Clone();
-            
+            MagickImage image = (MagickImage)textures[textureName].Clone();
+
 
             BMIconInfo icon = new BMIconInfo();
             icon.imageFile = Path.Combine(imageOutputDir, string.Format("{0}_char{1}.tga", font.name, utf32Char));
@@ -159,7 +159,7 @@ namespace BFGFontTool
 
             iconInfos[icon.charId] = icon;
 
-            MagickGeometry geom = new MagickGeometry(xstart, ystart, glyphWidth, glyphHeight);
+            MagickGeometry geom = new MagickGeometry(xstart, ystart, (uint)glyphWidth, (uint)glyphHeight);
             if (glyphWidth == 0 || glyphHeight == 0)
             {
                 //Bitmap bmp = new Bitmap(0, 0, System.Drawing.Imaging.PixelFormat.Format32bppArgb);

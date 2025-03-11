@@ -118,7 +118,7 @@ namespace BFGFontTool
             public OptionSet GetOptions()
             {
                 return new OptionSet () {
-                    { "h|help",  "show this message and exit", 
+                    { "h|help",  "show this message and exit",
                         v => { if (v != null) throw new ShowHelpException(); } },
                     { "bm|bmfont=", "file name of the input BMFont (i.e. bm=ArialNarrow.fnt)",
                         v => bmFontInputFileName = v },
@@ -204,7 +204,7 @@ namespace BFGFontTool
             public OptionSet GetOptions()
             {
                 return new OptionSet () {
-                    { "h|help",  "show this message and exit", 
+                    { "h|help",  "show this message and exit",
                         v => { if (v != null) throw new ShowHelpException(); } },
                     { "d3|d3font=", "file name of the input Doom 3 .dat font (i.e. d3=fontimage_48.dat)",
                         v => d3FontInputFileName = v },
@@ -276,7 +276,7 @@ namespace BFGFontTool
                         Console.WriteLine (e.Message);
                         showHelp = true;
                     }
-                    catch (ShowHelpException e) {
+                    catch (ShowHelpException) {
                         showHelp = true;
                     }
                 }
